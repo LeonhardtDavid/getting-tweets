@@ -1,0 +1,10 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET           /api/interests            controllers.Interests.list(from: Long ?= 0, limit: Int ?= 20, after: Option[LocalDateTime])
+POST          /api/interests            controllers.Interests.save
+GET           /api/interests/:id        controllers.Interests.find(id: Long)
+DELETE        /api/interests/:id        controllers.Interests.delete(id: Long)
