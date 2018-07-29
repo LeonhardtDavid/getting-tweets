@@ -24,14 +24,10 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
 coverageMinimum := 90
 coverageFailOnMinimum := true
 
-play.sbt.routes.RoutesKeys.routesImport ++= Seq(
-  "java.time.LocalDateTime",
-  "binders.QueryStringBinder._"
-)
-
 libraryDependencies ++= {
   val reactivemongoVersion = "0.15.0"
   Seq(
+    ws,
     guice,
     "com.danielasfregola" %% "twitter4s" % "5.5",
     "org.reactivemongo" %% "play2-reactivemongo" % s"$reactivemongoVersion-play26",

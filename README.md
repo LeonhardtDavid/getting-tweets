@@ -110,3 +110,13 @@ Ninguno de los llamados anteriores actualiza el stream, una vez hayamos realizad
 ```bash
 curl -i -X GET 'http://localhost:9001/streams/run'
 ```
+
+## Agente
+
+Existe el proyecto "agent" que se encarga de pedir al servicio "interests" los últimos intereses agregados (se configura y por defecto está en los últimos 5 minutos) y luego agregar los mismos al servicio "stream" y luego actualizar el stream.  
+
+Ejecutar el agente con el siguiente comando desde la carpera agent:
+
+```bash
+sbt run
+```

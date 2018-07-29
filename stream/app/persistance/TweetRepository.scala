@@ -1,6 +1,5 @@
 package persistance
 
-import akka.NotUsed
 import akka.stream.Materializer
 import akka.stream.scaladsl.Source
 import javax.inject.Inject
@@ -27,7 +26,7 @@ class TweetRepository @Inject() (reactiveMongoApi: ReactiveMongoApi)(
       res <- db.insert(t) if res.ok
     } yield t
 
-  def find(interests: List[String]): Source[Tweet, NotUsed] = {
+  def find(interests: List[String]): Source[Tweet, _] = {
     Source
       .fromFuture(this.futureCollection)
       .flatMapConcat { db =>
